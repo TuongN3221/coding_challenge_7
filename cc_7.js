@@ -15,3 +15,12 @@ function calculateHourlyWage(salary, hoursPerWeek) {
 
 calculateHourlyWage(52000, 40); // Expected output: "Hourly Wage: $25.00"
 calculateHourlyWage(75000, 35); // Expected output: "Hourly Wage: $41.21"
+
+// Task 5 - Business Loan Interst Calculation
+function calculateLoanInterest(principal, rate, years) {
+    let interest = principal * rate * years;
+    console.log(`Total Interest: $${interest.toFixed(2)}`);
+};
+
+calculateLoanInterest(1000, 0.05, 3); // Expected output: "Total Interest: $150.00"
+calculateLoanInterest(5000, 0.07, 5); // Expected output: "Total Interest: $1750.00"
