@@ -30,6 +30,28 @@ const calculateLoyaltyDiscount = (amount, years) => {
 calculateLoyaltyDiscount(100, 6); // Expected output: "Discounted Price: $85.00"
 calculateLoyaltyDiscount(200, 2); // Expected output: "Discounted Price: $190.00"
 
+// Task 4 -Product Shipping Cost Calculation
+function calculateShippingCost(weight, location, expedited = false) {
+    let shippingCost = 0;
+
+    if (location === "USA") {
+         shippingCost = 5 + (0.5 * weight);
+    } else if (location === "Canada") {
+        shippingCost = 10 + (0.7 * weight);
+    } else {
+        return "Invalid Location";
+    }// Calculates cost based on location
+
+    if (expedited) {
+        shippingCost += 10;
+    }// Checks if package is expedited and add expedite cost to total
+    return `Shipping Cost: $${shippingCost.toFixed(2)}`;
+};
+
+console.log(calculateShippingCost(10, "USA", true)); // Expected output: "Shipping Cost: $20.00"
+console.log(calculateShippingCost(5, "Canada", false)); // Expected output: "Shipping Cost: $13.50"
+
+
 // Task 5 - Business Loan Interst Calculation
 function calculateLoanInterest(principal, rate, years) {
     let interest = principal * rate * years;// Calculates the interest amounts from parameters
