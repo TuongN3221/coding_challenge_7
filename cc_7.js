@@ -69,3 +69,16 @@ function filterHighValueTransactions(transactions, filterFunction) {
 };
 filterHighValueTransactions(transactions, amount => amount > 1000); // filters the numbers from transactions array to return above 1000
 // Expected output: [1200, 3000, 2200]
+
+// Task 7 - Budget Tracker
+function createBudgetTracker() {
+    let totalExpense = 0;// Sets up empty expenses
+
+    return function(expense) {
+        totalExpense += expense;// Adds the expense to totalExpense
+        return `Total Expenses: ${totalExpense}`;
+    } 
+};
+let budget = createBudgetTracker();// Sets up empty budget with createBudgetTracker function
+console.log(budget(200)); // Expected output: "Total Expenses: $200"
+console.log(budget(150)); // Expected output: "Total Expenses: $350"
