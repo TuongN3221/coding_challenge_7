@@ -82,3 +82,20 @@ function createBudgetTracker() {
 let budget = createBudgetTracker();// Sets up empty budget with createBudgetTracker function
 console.log(budget(200)); // Expected output: "Total Expenses: $200"
 console.log(budget(150)); // Expected output: "Total Expenses: $350"
+
+// Task 8 - Business Growth Projection
+function calculateGrowth(years, revenue) {
+    if (years >= 10) {
+        return revenue
+    };// Returns revenue if past year 10
+    const growthRate = 0.05;
+    const projectedRevenue = revenue * (1 + growthRate);// calculates projected revenue for next year 
+    return calculateGrowth(years + 1, projectedRevenue);// Recursive call for the next year
+};
+
+function revenueFormat(revenue) {
+    return `Projected Revenue: $${revenue.toFixed(2)}`
+};// Function to format the output
+
+console.log(revenueFormat(calculateGrowth(8, 1000))); // Expected output: "Projected Revenue: $1102.50"
+console.log(revenueFormat(calculateGrowth(5, 5000))); // Expected output: "Projected Revenue: $6381.41"
